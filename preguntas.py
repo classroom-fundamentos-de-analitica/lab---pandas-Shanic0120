@@ -169,7 +169,7 @@ def pregunta_10():
     3   D                  1:2:3:5:5:7
     4   E  1:1:2:3:3:4:5:5:5:6:7:8:8:9
     """
-    return pd.DataFrame(tbl0.groupby(by='_c1')['_c2'].apply(lambda x:":".join(map(str, sorted(x)))).reset_index())
+    return pd.DataFrame(tbl0.groupby(by='_c1')['_c2'].apply(lambda x:":".join(map(str, sorted(x)))))
 
 def pregunta_11():
     """
@@ -224,4 +224,3 @@ def pregunta_13():
     Name: _c5b, dtype: int64
     """
     return pd.merge(tbl0,tbl2).groupby(by='_c1')['_c5b'].sum()
-print(pregunta_13())
